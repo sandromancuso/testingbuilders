@@ -15,10 +15,14 @@ public class TradeBuilder {
 	}
 
 	public Trade build() {
-		Trade trade = new Trade();
+		Trade trade = createTrade();
 		trade.setInboundMessage(inboundMessage);
 		trade.setReportabilityDecision(reportabilityDecision);
 		return trade;
+	}
+
+	Trade createTrade() {
+		return new Trade();
 	}
 
 	public TradeBuilder withReportabilityDecision(ReportabilityDecision reportabilityDecision) {
