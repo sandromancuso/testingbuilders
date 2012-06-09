@@ -14,6 +14,11 @@ public class TradeBuilder {
 		return this;
 	}
 
+	public TradeBuilder withReportabilityDecision(ReportabilityDecision reportabilityDecision) {
+		this.reportabilityDecision = reportabilityDecision;
+		return this;
+	}
+	
 	public Trade build() {
 		Trade trade = createTrade();
 		trade.setInboundMessage(inboundMessage);
@@ -23,11 +28,6 @@ public class TradeBuilder {
 
 	Trade createTrade() {
 		return new Trade();
-	}
-
-	public TradeBuilder withReportabilityDecision(ReportabilityDecision reportabilityDecision) {
-		this.reportabilityDecision = reportabilityDecision;
-		return this;
 	}
 
 }
