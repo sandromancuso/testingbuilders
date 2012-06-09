@@ -1,7 +1,7 @@
 package org.craftedsw.testingbuilders;
 
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ public class TradeBuilderTest {
 	
 	@Test public void
 	should_create_a_trade_with_all_specified_attributes() {
-		when(tradeBuilder.createTrade()).thenReturn(trade);
+		given(tradeBuilder.createTrade()).willReturn(trade);
 		
 		tradeBuilder
 				.withInboundMessage(TRADE_XML_MESSAGE)
